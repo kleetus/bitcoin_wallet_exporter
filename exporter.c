@@ -36,7 +36,7 @@ int keylen;
 
 void printMetaInfo(const unsigned char*);
 int usage(void);
-int testProvidedFiles(char*, char*);
+int testProvidedFiles(char*);
 int deserializeInt(const unsigned char*, const unsigned int);
 int deserializeArray(const unsigned char*, const unsigned int, unsigned char*, const unsigned int, const unsigned int, const unsigned int);
 int writeRecord(const OBJ* [], const unsigned int, const unsigned char*, FILE*);
@@ -64,7 +64,7 @@ int main(int argc, char *argv[]) {
     }
   }
 
-  if(!testProvidedFiles(infilepath, outfilepath)) {
+  if(!testProvidedFiles(infilepath)) {
     fprintf(stderr, "Provided input wallet file or output wallet file location is not accessible or writeable.\n");
     return 1;
   }
@@ -302,24 +302,16 @@ int usage(void) {
   return (0);
 }
 
-int testProvidedFiles(char *inFile, char *outFile) {
-  if (inFile == NULL) {
+int testProvidedFiles(char *file) {
+  if (file == NULL) {
     return (0);
   }
-  FILE *in, *out;
-  in = fopen(inFile, "r");
+  FILE *in;
+  in = fopen(file, "r");
   if (in == NULL) {
     return (0);
   }
   fclose(in);
-  if (outFile == NULL) {
-    return (1);
-  }
-  out = fopen(outFile, "r+");
-  if (out == NULL) {
-    return (0);
-  }
-  fclose(out);
   return (1);
 }
 
