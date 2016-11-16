@@ -20,7 +20,7 @@ Simple
 $ exporter -d wallet.dat -silent > output.json
 ```
 
-Give me details but out json to a file
+Give me details but output json to a file
 ```bash
 $ exporter -d wallet.dat -o output.json
 ```

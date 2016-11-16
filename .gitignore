@@ -1,0 +1,8 @@
+*.o
+**/*.o
+**/*.lo
+**/*.a
+exporter
+*.json
+**/build_unix
+
