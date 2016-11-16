@@ -23,7 +23,7 @@ char *derivationMethods[] = { "SHA512", "scrypt" };
 const OBJ *objValues[6];
 OBJ type, id, ct, slt, dm, rnd, pk;
 
-unsigned char ukeySerPK[429], pkHash[65], cipherText[97], salt[17], pubkey[67], strKey[5], logger[256];
+unsigned char ukeySerPK[429], pkHash[65], cipherText[97], salt[17], pubkey[256], strKey[5], logger[256];
 int ret, rounds = 0, nID = 0, ukeynum = 0, keynum = 0, ckeynum = 0, mkeynum = 0, recordsWritten = 0;
 short int silent = 0, valuesLen = 0, writeLog = 0, firstRecordWritten = 0;
 FILE *outfile;
@@ -205,7 +205,7 @@ int main(int argc, char *argv[]) {
       ct.data = cipherText;
       objValues[1] = &ct;
 
-      deserializeArray((const unsigned char*)key.data, 6, pubkey, 33, 1, 1);
+      deserializeArray((const unsigned char*)key.data, 6, pubkey, 0, 1, 1);
       pk.type = 's';
       pk.key = "pubKey";
       pk.data = pubkey;
