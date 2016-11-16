@@ -9,7 +9,7 @@ Clearly, this task is VERY SENSITIVE in nature. DO NOT feed your wallet into jus
 
 1. Entire program is < 400 lines of straight-forward C code.
 2. Berkeley DB is the only dependency. If included Makefile is used, then libdb.a will be linked statically.
-3. All memory used within the program will be residency in the program data region, there is no way for sensitive memory to be paged out into not secure swap files or compressed elsewhere.
+3. All memory used within the program will be resident in the program data region, there is no way for sensitive memory to be paged out into not secure swap files or compressed elsewhere.
 4. The program does not ask for or otherwise require a master passphrase in order to do its job. It simply writes a json file with cipherText for later processing by other tools.
 5. The encrypted master passphrase, salt, hash paramaters and key data are exported to a file of your choice to a file or stdout.
 
