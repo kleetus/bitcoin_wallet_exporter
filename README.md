@@ -13,6 +13,22 @@ Clearly, this task is VERY SENSITIVE in nature. DO NOT feed your wallet into jus
 4. The program does not ask for or otherwise require a master passphrase in order to do its job. It simply writes a json file with cipherText for later processing by other tools.
 5. The encrypted master passphrase, salt, hash paramaters and key data are exported to a file of your choice to a file or stdout.
 
+## Building
+
+You will need standard C header files (stdlib.h, string.h, stdarg.h, stdio.h) as well as a C library such as LibSystem.B.dylib (mac), glibc (linux), libc (unix). Most systems have these things. On mac, you may need Xcode and system headers. Please get this from the app store. Then,
+
+Mac-only
+```bash
+$ xcode-select --install
+```
+Ensure you have headers in /usr/local/include
+
+Linux is fairly dependent on what distro you use.
+
+Mac/Unix/Linux
+```bash
+$ make
+```
 ## Usage
 
 Simple
