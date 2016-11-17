@@ -1,0 +1,6 @@
+exporter_homebrew:
+	gcc -o exporter exporter.c -ldb -I/usr/local/Cellar/berkeley-db4/4.8.30/include -L/usr/local/Cellar/berkeley-db4/4.8.30/lib
+exporter:
+	gcc -o exporter exporter.c -ldb
+PHONY: exporter_homebrew exporter
+.DEFAULT: exporter

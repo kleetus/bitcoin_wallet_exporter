@@ -15,6 +15,8 @@ Clearly, this task is VERY SENSITIVE in nature. DO NOT feed your wallet into jus
 
 ## Building
 
+Note: If building this tool with the included Makefile, please note that *NO CRYPTO ROUTINES* are available despite contrary messages from autoconf. Stupid gov't regulations prevent exporting such source code. If you need crypto routines, please obtain Berkeley DB version 4.8.30 directly from Oracle or Homebrew (if Mac) or your OS vendor (e.g. apt-get install bdb). Sorry! I've placed an alt Makefile for this purpose assuming that you have a dynamic library in a spot where the linker can find it.
+
 You will need standard C header files (stdlib.h, string.h, stdarg.h, stdio.h) as well as a C library such as LibSystem.B.dylib (mac), glibc (linux), libc (unix). Most systems have these things. On mac, you may need Xcode and system headers. Please get this from the app store. Then,
 
 Mac-only
